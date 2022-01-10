@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+{% block title %}XV-Bin{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <h1>XV-Bin</h1>
+  <h3>Paste text and share with your friends</h3>
+</div>
+
+<div class="container">
+  <form method="POST" action="/paste">
+    <div class="form-group">
+      <h4>XV-Bin Paste Title</h4>
+      <input type="text" class="form-control" name="title" required>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" name="content" rows="20" required>
+      </textarea>
+    </div>
+    <div class="form-group text-center">
+      <button type="submit" class="btn btn-lg btn-primary">Create New Paste</button>
+    </div>
+  </form>
+{% if paste_url %}
+{{ paste_url }}
+{% endif %}
+<br>
+<br>
+<div class="container">
+A <a href="/paste">XV-Bin</a> or text storage site is a type of online content-hosting service where users can store plain text, code, etc. Your created paste is non-editable and can't be deleted. This project is beta, so please report bugs or feedback to <a href="t.me/xolvadev">XolvaID</a> !
+</div>
+<br>
+<br>
+<center>
+      &copy; 2022 XolvaDev
+</center>
+</div>
+{% endblock %}
